@@ -18,13 +18,23 @@ namespace MethodsPractice
             //This means a method will NEVER be created inside another method or member of the class.
             //However, methods are frequently CALLED inside of another class or method.
 
-            Console.WriteLine("Hello. Please enter the first number to be added.");
-            int numberOne = int.Parse(Console.ReadLine());
-            Console.WriteLine("Please enter the second number to be added.");
-            int numberTwo = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Hello. Please enter the first number to be added.");
+            //int numberOne = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Please enter the second number to be added.");
+            //int numberTwo = int.Parse(Console.ReadLine());
 
-            int answer = Add(numberOne, numberTwo);
-            Console.WriteLine("The Answer is: " + answer);
+            //int answer = Add(numberOne, numberTwo);
+            //Console.WriteLine("The Answer is: " + answer);
+
+            //RobotWarning("Will Robinson");
+
+            string myBirthMonth = "September";
+            string myFriendBirthMonth = "December";
+            string myVehicle = Vehicle(myBirthMonth);
+            string myFriendVehicle = Vehicle(myFriendBirthMonth);
+
+            Console.WriteLine("My future vehicle is {0} and Jordan's future vehicle is {1}.", myVehicle, myFriendVehicle);
+
         }
         //Method Header
         //Access Modifier - Return Type - Method Name (in Pascal Case) - Parentheses (Sometimes with parameters)
@@ -40,5 +50,24 @@ namespace MethodsPractice
         }
         //if you have a method that does not have a return value, you would use the keyword 'void'.
         //When we have a 'void' return type, we DON'T need to use the keyword 'return'.
+
+        public static void RobotWarning(string name)
+        {
+            Console.WriteLine("Danger, " + name + "!!");
+        }
+
+        public static string Vehicle(string birthMonth)
+        {
+            string vehicleFortune;
+            if (birthMonth.ToUpper() == "SEPTEMBER" || birthMonth.ToUpper() == "OCTOBER")
+            {
+                vehicleFortune = "Hoverboard";
+            }
+            else
+            {
+                vehicleFortune = "SUV";
+            }
+            return vehicleFortune;
+        }
     }
 }
